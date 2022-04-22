@@ -1,0 +1,77 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+@font-face {
+    font-family: Gilroy;
+    src: url('../fonts/Gilroy-Light.otf');
+}
+body {
+    font-family: 'Gilroy';
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.container {
+    padding-top: 20px;
+}
+.ct {
+    text-align: center;
+    font-size: 38px;
+    margin-top: 10px;
+}
+input{
+    width: 550px;
+    height: 40px;
+    border: 2px solid #0071E3;
+    border-radius: 5px;
+    outline: none;
+}
+.btn {
+    background: #0071E3;
+    border-radius: 10px;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    width: 550px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+hr {
+    width: 1440px;
+    margin: 0 auto;
+}
+img {
+    width: 20px;
+}
+.right {
+    display: flex;
+    flex-direction: column;
+}
+.check {
+    position: absolute;
+    width: 15px;
+    transform: translate(-18px,14px);
+}
+.container {
+    width: 1440px;
+    margin: 0 auto;
+    margin-top: 10px;
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.item {
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid #007FFF;
+    border-radius: 10px;
+    background: #f0f0f0;
+    width: 240px;
+    height: 45px;
+    padding: 20px;
+}
