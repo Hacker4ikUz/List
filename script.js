@@ -1,6 +1,8 @@
 let cont = document.querySelector('.container')
 let form = document.forms.list
 let inputs = form.querySelectorAll('input')
+let theinp = document.querySelector('.theinp')
+let btn = document.querySelector('.btn')
 let tasks = [
     {
         id: Math.random(),
@@ -57,6 +59,7 @@ function reload(arr) {
         let i = document.createElement('i')
         let img = document.createElement('img')
         let check = document.createElement('input')
+        let edit = document.createElement('button')
 
         div.classList.add('item')
         div.setAttribute('id', item.id)
@@ -65,29 +68,42 @@ function reload(arr) {
         img.setAttribute('src', './img/remove.png')
         check.classList.add('check')
         check.setAttribute('type', 'checkbox')
-        
+        edit.innerHTML = 'Edit'
 
         div.append(left,right)
-        left.append(h3, i)
+        left.append(h3, i, edit)
         right.append(img,check)
         cont.append(div)
 
         img.onclick = (e) => {
             let id = e.target.parentNode.id
 
-            let idx = tasks.findIndex(item => item.id == id)
+            let idx = tasks.findIndex(elem => elem.id == item.id)
 
             tasks.splice(idx, 1)
 
             reload(tasks)
         }
         check.onclick = () => {
-            div.style.opacity = '50%';
-            h3.style.textDecoration = 'line-through red 3px';
+            h3.classList.toggle('textline')
         }
-        check.ondblclick = () =>{
-            div.style.opacity = '100%';
-            h3.style.textDecoration = 'none';
+        edit.onclick = () => {
+            let newinp = document.createElement('input')
+            newinp.style.width = '180px';
+            newinp.style.height = '25px'
+            h3.innerHTML = ''
+            h3.append(newinp)
+            // btn.innerHTML = 'Save'
+            // theinp.value = item.task
+            h3 = newinp
+            newinp.value = item.task
+            edit.innerHTML = 'save'
+            if(edit.innerHTML == 'save'){
+                edit.onclick = () => {
+                    h3.innerHTML = newinp.value
+                }
+            }
         }
+
     }
 }
