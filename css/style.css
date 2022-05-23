@@ -75,3 +75,6 @@ img {
     height: 45px;
     padding: 20px;
 }
+.textline {
+    text-decoration: line-through 3px solid red;
+}
