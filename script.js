@@ -42,6 +42,8 @@ function submit() {
     })
 
     tasks.push(user);
+    //localStorage
+    localStorage.tasks = JSON.stringify(tasks)
     reload(tasks)
 }
 
@@ -71,7 +73,7 @@ function reload(arr) {
         edit.innerHTML = 'Edit'
 
         div.append(left,right)
-        left.append(h3, i, edit)
+        left.append(h3, i)
         right.append(img,check)
         cont.append(div)
 
@@ -107,3 +109,12 @@ function reload(arr) {
 
     }
 }
+
+let temp = JSON.parse(localStorage.getItem('tasks'))
+tasks = temp
+function tempp() {
+    if(temp.length > 0){
+        reload(temp)
+    }
+}
+tempp()
